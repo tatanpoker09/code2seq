@@ -28,6 +28,7 @@ class Config:
         return config
 
     def take_model_hyperparams_from(self, otherConfig):
+        print(otherConfig)
         self.EMBEDDINGS_SIZE = otherConfig.EMBEDDINGS_SIZE
         self.RNN_SIZE = otherConfig.RNN_SIZE
         self.DECODER_SIZE = otherConfig.DECODER_SIZE

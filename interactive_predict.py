@@ -14,6 +14,7 @@ class InteractivePredictor:
     def __init__(self, config, model, language):
         self.model = model
         self.config = config
+        print(language)
         if language == 'java':
             self.path_extractor = JavaExtractor(config, EXTRACTION_API, self.config.MAX_PATH_LENGTH, max_path_width=2)
         elif language == 'cpp':

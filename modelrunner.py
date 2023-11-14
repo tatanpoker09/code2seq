@@ -428,9 +428,10 @@ class ModelRunner:
                 self.nodes_vocab_size = pickle.load(file)
 
                 self.num_training_examples = pickle.load(file)
+
+                pickle.load(file)
                 saved_config = pickle.load(file)
                 self.config.take_model_hyperparams_from(saved_config)
-
             self.model = Model(self.config, self.subtoken_vocab_size, self.target_vocab_size, self.nodes_vocab_size,
                                self.target_to_index)
             checkpoint = tf.train.Checkpoint(model=self.model)
